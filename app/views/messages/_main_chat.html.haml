@@ -1,0 +1,36 @@
+.main
+  .header
+    .header__group
+      .header__group_name
+        group_name
+      .header__group_member
+        Member
+    .header__edit
+      Edit
+      =link_to "#" 
+
+  .contents
+    .contets_group
+      .contents_group_name
+        group
+      .contents_group_time
+        2019/11/8(fri)20:40
+    .contents_message
+      thisi is a first message
+    
+  .input_box
+    .message_box
+      %input.message{:placeholder => "type a message"}
+      %label{class: "input_box_image"}
+        %i.fa.fa-image
+        %input{type: "file", class: "file"}
+    .send_form
+      Send
+      
+     
+
+    -# =form_for @messages do |f|
+    -#   = f.text_field :message
+    -#   = f.file_field :upload_file
+    -#   = f.submit "Send"
+        

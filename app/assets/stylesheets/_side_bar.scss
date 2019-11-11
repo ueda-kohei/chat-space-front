@@ -1,0 +1,32 @@
+
+.wrapper{
+  display: flex;
+  .side{
+   margin-right: auto;
+    .header {
+      height: 100px;
+      width:300px;
+      line-height: 100px;
+      background-color: #253141;
+      color: #ffffff;
+      padding-left: 20px;
+      padding-right: 20px;
+      display: flex;
+      .header__user{
+        margin-right: auto;
+      }
+    }
+    .contents {
+      background-color: #2f3e51;
+      width:300px;
+      height: calc(100vh - 100px);
+      padding-left: 20px;
+      padding-right: 20px;
+        .contents__group {
+          color: #ffffff;
+          padding-top: 20px;
+          padding-bottom: 40px;
+        }
+    } 
+  }
+}
