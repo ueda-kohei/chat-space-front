@@ -3,14 +3,17 @@
     .header__user
       = current_user.name
     .header__edit
-      %i.fa.fa-edit
-      =link_to "#"
+      = link_to new_group_path do
+        %i.fa.fa-edit
     .header__cog
       %i.fa.fa-cog
       =link_to "#"
 
-  .contents
-    .contents__group
-      group
-      =link_to "#"
-
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
