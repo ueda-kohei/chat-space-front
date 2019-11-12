@@ -35,23 +35,23 @@
     background-color: #fafafa;
     width: calc(100vw - 340px);
 
-    .contets_group{
+    &__group{
       padding-top:46px;
       display: flex;
-      .contents_group_name{
+      &_name{
       padding-left:40px;
       font-size:16px;
       color:#333333;
       font-weight: bold;
       }
-      .contents_group_time{
+      &_time{
         padding-left:10px;
         font-size:12px;
         color:#999999;
       }
     }
 
-    .contents_message{
+    &_message{
       padding-top:10px;
       padding-left:40px;
       font-size:14px;
@@ -59,7 +59,7 @@
     }
   }
 
-  .input_box{
+  .input-box{
     background-color:#ddd;
     position:absolute;
     bottom:0;
@@ -67,7 +67,7 @@
     width:inherit;
     display: flex;
 
-    .message_box{
+    &__message-box{
       padding-left:40px;
       padding-right:40px;
       padding-top:20px;
@@ -94,7 +94,7 @@
 
       
     }
-    .send_form{
+    &__send_form{
       line-height:50px;
       margin-right:40px;
       margin-top:20px;
