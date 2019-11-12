@@ -36,8 +36,8 @@
     width: calc(100vw - 340px);
 
     &__group{
-      padding-top:46px;
-      display: flex;
+    padding-top:46px;
+    display: flex;
       &_name{
       padding-left:40px;
       font-size:16px;
@@ -51,7 +51,7 @@
       }
     }
 
-    &_message{
+    &__message{
       padding-top:10px;
       padding-left:40px;
       font-size:14px;
@@ -94,7 +94,7 @@
 
       
     }
-    &__send_form{
+    &__send-form{
       line-height:50px;
       margin-right:40px;
       margin-top:20px;
