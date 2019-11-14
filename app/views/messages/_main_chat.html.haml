@@ -2,12 +2,15 @@
   .header
     .header__group
       .header__group_name
-        group_name
+        =@group.name
       .header__group_member
-        Member
+        Member:
+        - @group.users.each do |user|
+          =user.name
+        %end
     .header__edit
-      Edit
-      =link_to "#" 
+      = link_to edit_group_path(current_user) do
+        Edit
 
   .contents
     .contets__group
@@ -17,20 +20,19 @@
         2019/11/8(fri)20:40
     .contents__message
       thisi is a first message
-    
-  .input-box
-    .input-box__message-box
-      %input.message{:placeholder => "type a message"}
-      %label{class: "input-box_image"}
-        %i.fa.fa-image
-        %input{type: "file", class: "file"}
-    .input-box__send-form
-      Send
-      
-     
 
-    -# =form_for @messages do |f|
-    -#   = f.text_field :message
-    -#   = f.file_field :upload_file
-    -#   = f.submit "Send"
+    .messages
+      = render @messages
+      
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit "Send", class: 'form__submit'
+      
+    
+     
         
