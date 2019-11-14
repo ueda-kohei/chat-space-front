@@ -7,7 +7,7 @@
     background-color: #ffffff;
     border-bottom:solid #eeeeee;
     display: flex;
-   
+    overflow:scroll;
     &__group{
       padding-left:40px;
       &_name{
@@ -24,9 +24,12 @@
     }
 
     &__edit{
-      padding-top:28px;
-      padding-right:40px;
-      padding-left:20px;
+      border: 1px solid #38AEF0;
+      color:#38AEF0;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
       margin-left: auto;
     }
   }
@@ -34,10 +37,11 @@
   .contents{
     background-color: #fafafa;
     width: calc(100vw - 340px);
-
+    overflow:scroll;
+    height: calc(100% - 100px - 90px);
     &__group{
-    padding-top:46px;
-    display: flex;
+      padding-top:46px;
+      display: flex;
       &_name{
       padding-left:40px;
       font-size:16px;
@@ -59,54 +63,42 @@
     }
   }
 
-  .input-box{
-    background-color:#ddd;
-    position:absolute;
+  .form {
+    background-color: #DDD;
+    box-sizing: border-box;
+    height: 90px;
+    width: calc(100vw - 340px);
+    padding: 20px 50px 20px 40px;
+    position: absolute;
     bottom:0;
-    height:90px;
-    width:inherit;
-    display: flex;
-
-    &__message-box{
-      padding-left:40px;
-      padding-right:40px;
-      padding-top:20px;
-      font-size:16px;
-      color:#434A54;
-      width:90%;
-      position: relative;
-      .message{
-        height:50px;
-        width:95%;
-        border-style: none;
-        padding-left:10px; 
-        
-        
+    &__message {
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 200px);
+    }
+    &__mask {
+      background-color:white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
       }
-      .fa-image{
-        position: absolute;
-        right:100px;
-        top:40px;
-      }
-      .file{
+      .hidden {
         display: none;
       }
-
-      
     }
-    &__send-form{
-      line-height:50px;
-      margin-right:40px;
-      margin-top:20px;
-      margin-bottom:20px;
-      padding-left:20px;
-      padding-right:20px;
-
-      font-size:16px;
-      color:#ffffff;
+    &__submit {
       background-color:#38AEF0;
- 
-      
+      border: none;
+      color:white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
     }
   }
 }
