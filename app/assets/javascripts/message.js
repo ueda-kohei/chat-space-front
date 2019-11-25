@@ -24,8 +24,7 @@ $(function(){
 
 $(".new_message").on("submit", function(e){
     e.preventDefault()
-    //console.log("ok")
-    // console.logを用いてイベント発火しているか確認
+
   let formData = new FormData(this); 
   let url = $(this).attr('action')
   $.ajax({
@@ -38,7 +37,7 @@ $(".new_message").on("submit", function(e){
   })
   .done(function(data){
     buildHTML(data);
-    // $('.messages').append(html);
+
     $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');   
     $('form')[0].reset();
   })
