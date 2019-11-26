@@ -1,9 +1,36 @@
+
 $(function(){
-
+  
+  var reloadMessages = function() {
+  if (window.location.href.match(/\/groups\/\d+\/messages/)){ 
+  let last_message_id = $('.message:last').data("message-id");
+  
+  $.ajax({
+    url: "api/messages",
+    type: 'get',
+    dataType: 'json',
+    data: {id: last_message_id}
+  })
+  
+  .done(function(messages) {
+    $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast'); 
+    let insertHTML = '';
+    messages.forEach(function (message) {
+      insertHTML = buildHTML(message);
+      $('.messages').append(insertHTML);
+    })
+  })
+  .fail(function() {
+    alert('error1');
+  });
+ };
+}; 
+setInterval(reloadMessages, 7000);
+  
   function buildHTML(message){
-    image = ( message.image ) ? `<img class= "lower-message__image" src=${message.image} >` : "";
+    let image = ( message.image ) ? `<img class= "lower-message__image" src=${message.image} >` : "";
 
-    let html = `<div class=message>
+    let html = `<div class=message data-message-id="${message.id}">
                     <div class="upper-message">
                       <div class="upper-message__user-name">
                       ${message.user_name}　
@@ -22,7 +49,7 @@ $(function(){
     $('.messages').append(html);
   }
 
-$(".new_message").on("submit", function(e){
+  $(".new_message").on("submit", function(e){
     e.preventDefault()
 
   let formData = new FormData(this); 
@@ -37,7 +64,6 @@ $(".new_message").on("submit", function(e){
   })
   .done(function(data){
     buildHTML(data);
-
     $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');   
     $('form')[0].reset();
   })
@@ -46,4 +72,6 @@ $(".new_message").on("submit", function(e){
   });
   return false;
 });
+
+
 });
