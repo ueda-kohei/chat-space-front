@@ -13,16 +13,7 @@
         Edit
 
   .contents
-    .contets__group
-      .contents__group_name
-        group
-      .contents__group_time
-        2019/11/8(fri)20:40
-    .contents__message
-      thisi is a first message
-
-    .messages
-      = render @messages
+    = render @messages
       
     .form
       = form_for [@group, @message] do |f|
