@@ -21,7 +21,7 @@ $(function(){
     })
   })
   .fail(function() {
-    alert('error1');
+    alert('自動更新に失敗しました');
   });
  };
 }; 
