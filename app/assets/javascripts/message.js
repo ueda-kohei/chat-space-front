@@ -17,7 +17,7 @@ $(function(){
     let insertHTML = '';
     messages.forEach(function (message) {
       insertHTML = buildHTML(message);
-      $('.messages').append(insertHTML);
+      // $('.messages').append(insertHTML);
     })
   })
   .fail(function() {
@@ -46,7 +46,8 @@ setInterval(reloadMessages, 7000);
                       ${image}
                     </div>
                   </div> `
-    $('.messages').append(html);
+                  console.log(html)
+    $('.contents').append(html);
   }
 
   $(".new_message").on("submit", function(e){

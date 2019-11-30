@@ -1,9 +1,9 @@
 .main{
   height:100vh;
-  width: calc(100vw - 340px);
+  width: calc(100vw - 300px);
   .header{
     height:100px;
-    width: calc(100vw - 340px);
+    width: calc(100vw - 300px);
     background-color: #ffffff;
     border-bottom:solid #eeeeee;
     display: flex;
@@ -30,13 +30,15 @@
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
-      margin-left: auto;
+      position: absolute;
+      right: 40px;
+      text-decoration: none;
     }
   }
 
   .contents{
     background-color: #fafafa;
-    width: calc(100vw - 340px);
+    width: calc(100vw - 300px);
     overflow:scroll;
     height: calc(100% - 100px - 90px);
     .upper-message{
@@ -67,7 +69,7 @@
     background-color: #DDD;
     box-sizing: border-box;
     height: 90px;
-    width: calc(100vw - 340px);
+    width: calc(100vw - 300px);
     padding: 20px 50px 20px 40px;
     position: absolute;
     bottom:0;
@@ -75,7 +77,7 @@
       border: none;
       float: left;
       height: 50px;
-      width: calc(100% - 200px);
+      width: calc(100% - 150px);
     }
     &__mask {
       background-color:white;
